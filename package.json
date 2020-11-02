@@ -1,0 +1,56 @@
+{
+  "name": "angular-boilerplate",
+  "version": "1.0.0",
+  "description": "Angular 10 boilerplate with Spectre.css, i18n, static prerendering and some common resources.",
+  "keywords": [
+    "angular",
+    "boilerplate",
+    "i18n",
+    "prerendering",
+    "scss"
+  ],
+  "repository": "https://github.com/tseignette/angular-boilerplate",
+  "license": "CC0-1.0",
+  "author": {
+    "name": "tseignette"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --host=0.0.0.0",
+    "start:fr": "ng serve --host=0.0.0.0 --configuration=fr",
+    "lint": "ng lint",
+    "extract": "ng xi18n --output-path=src/locale",
+    "build": "ng build --prod",
+    "prerender": "ng run angular-boilerplate:prerender"
+  },
+  "dependencies": {
+    "@angular/animations": "^10.1.6",
+    "@angular/common": "^10.1.6",
+    "@angular/compiler": "^10.1.6",
+    "@angular/core": "^10.1.6",
+    "@angular/forms": "^10.1.6",
+    "@angular/localize": "^10.1.6",
+    "@angular/platform-browser": "^10.1.6",
+    "@angular/platform-browser-dynamic": "^10.1.6",
+    "@angular/platform-server": "^10.1.6",
+    "@angular/router": "^10.1.6",
+    "@nguniversal/express-engine": "^10.1.0",
+    "express": "^4.15.2",
+    "rxjs": "~6.5.5",
+    "spectre.css": "^0.5.9",
+    "tslib": "^2.0.3",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1002.0",
+    "@angular/cli": "^10.1.7",
+    "@angular/compiler-cli": "^10.1.6",
+    "@nguniversal/builders": "^10.1.0",
+    "@types/express": "^4.17.8",
+    "@types/node": "^12.12.68",
+    "codelyzer": "^6.0.1",
+    "ts-node": "~8.3.0",
+    "tslint": "^6.1.3",
+    "typescript": "~3.9.5"
+  }
+}
