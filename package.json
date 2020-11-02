@@ -1,15 +1,15 @@
 {
-  "name": "angular-boilerplate",
+  "name": "autoentrepreneur",
   "version": "1.0.0",
-  "description": "Angular 10 boilerplate with Spectre.css, i18n, static prerendering and some common resources.",
+  "description": "Application de calcul des frais de l'auto-entrepreneur (et bien plus encore).",
   "keywords": [
     "angular",
-    "boilerplate",
-    "i18n",
+    "autoentrepreneur",
     "prerendering",
+    "pwa",
     "scss"
   ],
-  "repository": "https://github.com/tseignette/angular-boilerplate",
+  "repository": "https://github.com/tseignette/autoentrepreneur",
   "license": "CC0-1.0",
   "author": {
     "name": "tseignette"
@@ -17,11 +17,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",
-    "start:fr": "ng serve --host=0.0.0.0 --configuration=fr",
     "lint": "ng lint",
-    "extract": "ng xi18n --output-path=src/locale",
     "build": "ng build --prod",
-    "prerender": "ng run angular-boilerplate:prerender"
+    "prerender": "ng run autoentrepreneur:prerender"
   },
   "dependencies": {
     "@angular/animations": "^10.1.6",
@@ -29,7 +27,6 @@
     "@angular/compiler": "^10.1.6",
     "@angular/core": "^10.1.6",
     "@angular/forms": "^10.1.6",
-    "@angular/localize": "^10.1.6",
     "@angular/platform-browser": "^10.1.6",
     "@angular/platform-browser-dynamic": "^10.1.6",
     "@angular/platform-server": "^10.1.6",

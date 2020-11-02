@@ -1,4 +1,4 @@
-import { Component, Inject, LOCALE_ID } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-public',
@@ -7,12 +7,6 @@ import { Component, Inject, LOCALE_ID } from '@angular/core';
 })
 export class PublicComponent {
 
-  isEnglish: boolean;
-
-  constructor(
-    @Inject(LOCALE_ID) private locale: string
-  ) {
-    this.isEnglish = this.locale.startsWith('en');
-  }
+  constructor() { }
 
 }

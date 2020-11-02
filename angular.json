@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-boilerplate": {
+    "autoentrepreneur": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -13,23 +13,11 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {
-        "sourceLocale": {
-          "code": "en",
-          "baseHref": ""
-        },
-        "locales": {
-          "fr": "src/locale/messages.fr.xlf"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": [
-              "en"
-            ],
-            "outputPath": "dist/angular-boilerplate/browser",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,8 +46,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "localize": true,
-              "i18nMissingTranslation": "error",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -68,6 +54,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "/autoentrepreneur/",
               "budgets": [
                 {
                   "type": "initial",
@@ -80,32 +67,18 @@
                   "maximumError": "10kb"
                 }
               ]
-            },
-            "fr": {
-              "localize": [
-                "fr"
-              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-boilerplate:build"
+            "browserTarget": "autoentrepreneur:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-boilerplate:build:production"
-            },
-            "fr": {
-              "browserTarget": "angular-boilerplate:build:fr"
+              "browserTarget": "autoentrepreneur:build:production"
             }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "angular-boilerplate:build"
           }
         },
         "lint": {
@@ -123,7 +96,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-boilerplate/server",
+            "outputPath": "dist/autoentrepreneur/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -141,7 +114,6 @@
                   "src/app/@theme/styles"
                 ]
               },
-              "localize": true,
               "sourceMap": false,
               "optimization": true
             }
@@ -150,8 +122,8 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "angular-boilerplate:build:production",
-            "serverTarget": "angular-boilerplate:server:production",
+            "browserTarget": "autoentrepreneur:build:production",
+            "serverTarget": "autoentrepreneur:server:production",
             "routes": []
           },
           "configurations": {
@@ -160,5 +132,5 @@
         }
       }
     }},
-  "defaultProject": "angular-boilerplate"
+  "defaultProject": "autoentrepreneur"
 }
