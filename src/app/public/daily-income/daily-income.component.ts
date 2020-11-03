@@ -31,7 +31,7 @@ export class DailyIncomeComponent implements OnDestroy {
     // Update daily income when social charges changes
     this.stateChangesSub = this.stateService.stateChanges$
       .pipe(
-        filter($event => $event.key === 'socialCharges')
+        filter($event => $event.key === 'socialChargesRate')
       )
       .subscribe(() => {
         this.updateDailyIncome(false);

@@ -21,7 +21,7 @@ export class PriceService {
   }
 
   private get socialCharges(): number {
-    return this.stateService.get('socialCharges');
+    return this.stateService.get('socialChargesRate');
   }
 
 }

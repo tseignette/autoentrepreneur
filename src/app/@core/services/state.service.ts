@@ -3,7 +3,7 @@ import { DEFAULT_STATE } from '../core.constants';
 
 export interface State {
   dailyRate: number;
-  socialCharges: number;
+  socialChargesRate: number;
 }
 
 @Injectable()
@@ -23,7 +23,7 @@ export class StateService {
       return DEFAULT_STATE[key];
     }
 
-    return parseFloat(localeStorageItem);
+    return Number(localeStorageItem);
   }
 
   set(key: keyof State, value: number): void {

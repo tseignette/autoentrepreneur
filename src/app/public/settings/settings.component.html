@@ -2,19 +2,19 @@
 
 <form class="form-horizontal" [formGroup]="form">
   <div class="form-group">
-    <label class="form-label mr-auto" for="socialCharges">Charges sociales</label>
+    <label class="form-label mr-auto" for="socialChargesRate">Charges sociales</label>
 
     <div class="input-group">
       <input
         class="form-input"
-        formControlName="socialCharges"
-        id="socialCharges"
+        formControlName="socialChargesRate"
+        id="socialChargesRate"
         max="100"
         min="0"
         step="0.01"
         placeholder="22"
         type="number"
-        [ngClass]="{ 'is-error': form.controls.socialCharges.invalid }"
+        [ngClass]="{ 'is-error': form.controls.socialChargesRate.invalid }"
       >
       <span class="input-group-addon">%</span>
     </div>

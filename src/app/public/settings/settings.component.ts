@@ -17,24 +17,24 @@ export class SettingsComponent {
     private stateService: StateService
   ) {
     this.form = this.fb.group({
-      socialCharges: [null, [Validators.required, Validators.min(0), Validators.max(100), nbDecimalsValidator(2)]]
+      socialChargesRate: [null, [Validators.required, Validators.min(0), Validators.max(100), nbDecimalsValidator(2)]]
     }, {
       updateOn: 'blur'
     });
 
-    this.socialChargesControl.valueChanges.subscribe(value => {
-      if (this.socialChargesControl.invalid) {
+    this.socialChargesRateControl.valueChanges.subscribe(value => {
+      if (this.socialChargesRateControl.invalid) {
         return;
       }
 
-      this.stateService.set('socialCharges', value / 100);
+      this.stateService.set('socialChargesRate', value / 100);
     });
 
-    this.socialChargesControl.patchValue(this.stateService.get('socialCharges') * 100);
+    this.socialChargesRateControl.patchValue(this.stateService.get('socialChargesRate') * 100);
   }
 
-  private get socialChargesControl(): FormControl {
-    return this.form.get('socialCharges') as FormControl;
+  private get socialChargesRateControl(): FormControl {
+    return this.form.get('socialChargesRate') as FormControl;
   }
 
 }
