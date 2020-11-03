@@ -8,6 +8,12 @@ export class PriceService {
     private stateService: StateService
   ) { }
 
+  computeCharges(value: number): number {
+    const socialCharges = value * this.socialCharges;
+
+    return Number(socialCharges.toFixed(2));
+  }
+
   dailyIncomeToDailyRate(dailyIncome: number): number {
     const dailyRate = dailyIncome / (1 - this.socialCharges);
 

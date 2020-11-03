@@ -1,0 +1,13 @@
+<div class="bar">
+  <div
+    *ngFor="let item of items; let index = index"
+    class="bar-item tooltip"
+    [ngClass]="class[index % items.length]"
+    [ngStyle]="{ 'width.%': item.percentage }"
+    [attr.data-tooltip]="item.tooltip + ' - ' + (item.value | currency)"
+  >
+    <span class="text-ellipsis">
+      {{ item.value | currency }}
+    </span>
+  </div>
+</div>

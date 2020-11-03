@@ -1,0 +1,9 @@
+:host {
+  display: block;
+
+  // Allows text-ellipsis to work
+  .bar-item {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -5,6 +5,7 @@ import { PublicRoutingModule } from './public.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { DailyIncomeComponent } from './daily-income/daily-income.component';
+import { ThemeModule } from '../@theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DailyIncomeComponent } from './daily-income/daily-income.component';
     CommonModule,
     FormsModule,
     PublicRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThemeModule
   ]
 })
 export class PublicModule { }
