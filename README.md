@@ -8,8 +8,12 @@ Application de calcul des frais de l'auto-entrepreneur (et bien plus encore).
 - `npm run build` pour générer la version de production, les fichiers sont générés dans `docs`
 - `npm run prerender` fait la même chose mais il pré-rend aussi les routes définies dans la configuration `prerender` dans `angular.json`
 
-## Features
+## Fonctionnalités
 TODO:
 
 ## Liste des tâches
-TODO:
+- mise en place de la PWA
+- calcul du revenu journalier
+- calcul des revenus
+- calcul de statistiques
+- prévisions en fonction de l'objectif de CA
