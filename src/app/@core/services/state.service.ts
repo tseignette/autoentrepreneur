@@ -4,6 +4,7 @@ import { DEFAULT_STATE } from '../core.constants';
 export interface State {
   dailyRate: number;
   socialChargesRate: number;
+  turnoverRealized: number;
 }
 
 @Injectable()

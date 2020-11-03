@@ -23,6 +23,8 @@ class BarItem {
 })
 export class ChargesBarComponent implements OnChanges, OnInit, OnDestroy {
 
+  @Input() computeIncomeTax = false;
+
   @Input() disabled: boolean;
 
   @Input() total: number;
@@ -65,11 +67,18 @@ export class ChargesBarComponent implements OnChanges, OnInit, OnDestroy {
 
   private updateItems(): void {
     const socialCharges = this.priceService.computeCharges(this.total);
+    let income = this.total - socialCharges;
 
-    this.items = [
-      new BarItem(this.total - socialCharges, this.total, 'Revenus'),
-      new BarItem(socialCharges, this.total, 'Charges sociales')
-    ];
+    this.items = [new BarItem(socialCharges, this.total, 'Charges sociales')];
+
+    if (this.computeIncomeTax) {
+      const incomeTax = this.priceService.computeIncomeTax(this.total);
+
+      income -= incomeTax;
+      this.items.push(new BarItem(incomeTax, this.total, 'Impôt sur le revenu'));
+    }
+
+    this.items.unshift(new BarItem(income, this.total, 'Revenus'));
   }
 
 }

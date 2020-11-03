@@ -33,7 +33,7 @@ export class SettingsComponent {
     this.socialChargesRateControl.patchValue(this.stateService.get('socialChargesRate') * 100);
   }
 
-  private get socialChargesRateControl(): FormControl {
+  get socialChargesRateControl(): FormControl {
     return this.form.get('socialChargesRate') as FormControl;
   }
 

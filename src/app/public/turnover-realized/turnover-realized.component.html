@@ -1,0 +1,26 @@
+<form class="form-horizontal mb-2" [formGroup]="form">
+  <div class="form-group">
+    <label class="form-label mr-auto" for="turnoverRealized">Chiffre d'affaires réalisé</label>
+
+    <div class="input-group">
+      <input
+        class="form-input"
+        formControlName="turnoverRealized"
+        id="turnoverRealized"
+        min="0"
+        step="0.01"
+        placeholder="15000"
+        type="number"
+        [ngClass]="{ 'is-error': turnoverRealizedControl.invalid }"
+      >
+      <span class="input-group-addon">€</span>
+    </div>
+  </div>
+</form>
+
+<app-charges-bar
+  class="mb-2"
+  [computeIncomeTax]="true"
+  [disabled]="turnoverRealizedControl.invalid"
+  [total]="turnoverRealizedControl.value"
+></app-charges-bar>

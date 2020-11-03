@@ -13,6 +13,5 @@ TODO:
 
 ## Liste des tâches
 - mise en place de la PWA
-- calcul des revenus
 - calcul de statistiques
 - prévisions en fonction de l'objectif de CA
