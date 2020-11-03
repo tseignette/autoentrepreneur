@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { DEFAULT_STATE } from '../core.constants';
 
 export interface State {
+  dailyRate: number;
   socialCharges: number;
 }
 
 @Injectable()
 export class StateService {
+
+  stateChanges$ = new EventEmitter<{
+    key: keyof State,
+    value: any
+  }>();
 
   constructor() { }
 
@@ -22,6 +28,7 @@ export class StateService {
 
   set(key: keyof State, value: number): void {
     localStorage.setItem(key, String(value));
+    this.stateChanges$.next({ key, value });
   }
 
 }

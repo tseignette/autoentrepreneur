@@ -1,0 +1,43 @@
+<form class="py-2 mb-2" [formGroup]="form">
+  <div class="columns">
+    <div class="column">
+      <div class="form-group">
+        <label class="form-label" for="dailyRate">TJM</label>
+
+        <div class="input-group">
+          <input
+            class="form-input"
+            formControlName="dailyRate"
+            id="dailyRate"
+            min="0"
+            placeholder="300"
+            step="0.01"
+            type="number"
+            [ngClass]="{ 'is-error': dailyRateControl.invalid }"
+          >
+          <span class="input-group-addon">€</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="form-group">
+        <label class="form-label" for="dailyIncome">Revenu journalier</label>
+
+        <div class="input-group">
+          <input
+          class="form-input"
+          formControlName="dailyIncome"
+          id="dailyIncome"
+          min="0"
+          placeholder="234"
+          step="0.01"
+          type="number"
+          [ngClass]="{ 'is-error': dailyIncomeControl.invalid }"
+        >
+          <span class="input-group-addon">€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

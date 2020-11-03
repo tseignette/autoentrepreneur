@@ -1,12 +1,13 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StateService } from './services';
+import { PriceService, StateService } from './services';
 
 const IMPORTS = [
   CommonModule
 ];
 
 const PROVIDERS = [
+  PriceService,
   StateService
 ];
 

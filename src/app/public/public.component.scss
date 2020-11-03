@@ -1,0 +1,8 @@
+@import "variables";
+
+:host {
+  .divider {
+    margin-top: $unit-6;
+    margin-bottom: $unit-6;
+  }
+}
