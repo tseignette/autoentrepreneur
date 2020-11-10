@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StateService } from './state.service';
 
+const incomeTaxAllowance = 0.34;
 /**
  * From 0 € to 10 064 €, tax is 0%
  * From 10 064 € to 25 659 €, tax is 30%
@@ -22,32 +23,33 @@ export class PriceService {
     private stateService: StateService
   ) { }
 
-  computeCharges(value: number): number {
-    const socialCharges = value * this.socialCharges;
-
-    return Number(socialCharges.toFixed(2));
-  }
-
-  computeIncomeTax(value: number): number {
+  computeIncomeTax(turnover: number): number {
     let i = 0;
     let incomeTax = 0;
+    let reducedTurnover = (1 - incomeTaxAllowance) * turnover;
 
-    while (value > 0) {
+    while (reducedTurnover > 0) {
       const group = incomeTaxGroups[i + 1][0] - incomeTaxGroups[i][0];
       const groupTaxRate = incomeTaxGroups[i][1];
 
-      if (value < group) {
-        incomeTax += value * groupTaxRate;
+      if (reducedTurnover < group) {
+        incomeTax += reducedTurnover * groupTaxRate;
       }
       else {
         incomeTax += group * groupTaxRate;
       }
 
       i++;
-      value -= group;
+      reducedTurnover -= group;
     }
 
     return Number(incomeTax.toFixed(2));
+  }
+
+  computeSocialCharges(turnover: number): number {
+    const socialCharges = turnover * this.socialCharges;
+
+    return Number(socialCharges.toFixed(2));
   }
 
   dailyIncomeToDailyRate(dailyIncome: number): number {

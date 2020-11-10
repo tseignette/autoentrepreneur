@@ -66,7 +66,7 @@ export class ChargesBarComponent implements OnChanges, OnInit, OnDestroy {
   }
 
   private updateItems(): void {
-    const socialCharges = this.priceService.computeCharges(this.total);
+    const socialCharges = this.priceService.computeSocialCharges(this.total);
     let income = this.total - socialCharges;
 
     this.items = [new BarItem(socialCharges, this.total, 'Charges sociales')];
