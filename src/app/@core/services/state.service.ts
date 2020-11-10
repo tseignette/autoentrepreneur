@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { EventEmitter, Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { DEFAULT_STATE } from '../core.constants';
 
 export interface State {
@@ -15,10 +16,16 @@ export class StateService {
     value: any
   }>();
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: string
+  ) { }
 
   get(key: keyof State): number {
-    const localeStorageItem = localStorage.getItem(key);
+    let localeStorageItem = null;
+
+    if (isPlatformBrowser(this.platformId)) {
+      localeStorageItem = localStorage.getItem(key);
+    }
 
     if (localeStorageItem === null) {
       return DEFAULT_STATE[key];
@@ -28,7 +35,10 @@ export class StateService {
   }
 
   set(key: keyof State, value: number): void {
-    localStorage.setItem(key, String(value));
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(key, String(value));
+    }
+
     this.stateChanges$.next({ key, value });
   }
 
