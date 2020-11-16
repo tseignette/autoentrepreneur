@@ -1,0 +1,12 @@
+<div class="bar">
+  <div
+    *ngIf="percentage > 0"
+    class="bar-item bg-success"
+    role="progressbar"
+    [ngStyle]="{ 'width.%': percentage }"
+  >
+    <span class="text-ellipsis">
+      {{ percentage }}%
+    </span>
+  </div>
+</div>

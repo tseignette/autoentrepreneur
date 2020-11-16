@@ -25,7 +25,13 @@
   [total]="turnoverRealizedControl.value"
 ></app-charges-bar>
 
-<app-turnover-stats
-  [disabled]="turnoverRealizedControl.invalid"
+<app-monthly-income
+  class="mb-1"
+  [elapsedTimeOnly]="true"
   [turnover]="turnoverRealizedControl.value"
-></app-turnover-stats>
+></app-monthly-income>
+
+<app-nb-work-days
+  [elapsedTimeOnly]="true"
+  [turnover]="turnoverRealizedControl.value"
+></app-nb-work-days>

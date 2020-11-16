@@ -7,13 +7,15 @@ import { SettingsComponent } from './settings/settings.component';
 import { DailyIncomeComponent } from './daily-income/daily-income.component';
 import { ThemeModule } from '../@theme/theme.module';
 import { TurnoverRealizedComponent } from './turnover-realized/turnover-realized.component';
+import { TurnoverGoalComponent } from './turnover-goal/turnover-goal.component';
 
 @NgModule({
   declarations: [
     PublicComponent,
     SettingsComponent,
     DailyIncomeComponent,
-    TurnoverRealizedComponent
+    TurnoverRealizedComponent,
+    TurnoverGoalComponent
   ],
   imports: [
     CommonModule,

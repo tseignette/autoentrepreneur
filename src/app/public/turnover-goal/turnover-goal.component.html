@@ -1,0 +1,42 @@
+<form class="form-horizontal mb-2" [formGroup]="form">
+  <div class="form-group">
+    <label class="form-label mr-auto" for="turnoverGoal">Objectif de chiffre d'affaires</label>
+
+    <div class="input-group">
+      <input
+        class="form-input"
+        formControlName="turnoverGoal"
+        id="turnoverGoal"
+        min="0"
+        step="0.01"
+        placeholder="15000"
+        type="number"
+        [ngClass]="{ 'is-error': turnoverGoalControl.invalid }"
+      >
+      <span class="input-group-addon">€</span>
+    </div>
+  </div>
+</form>
+
+<app-charges-bar
+  class="mb-2"
+  [computeIncomeTax]="true"
+  [disabled]="turnoverGoalControl.invalid"
+  [total]="turnoverGoalControl.value"
+></app-charges-bar>
+
+<app-monthly-income
+  class="mb-1"
+  [turnover]="turnoverGoalControl.value"
+></app-monthly-income>
+
+<app-nb-work-days
+  class="mb-2"
+  [remainingTimeOnly]="true"
+  [turnover]="turnoverRemaining"
+></app-nb-work-days>
+
+<app-goal-bar
+  [turnoverGoal]="turnoverGoalControl.value"
+  [turnoverRealized]="turnoverRealized"
+></app-goal-bar>

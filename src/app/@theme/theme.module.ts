@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AutofocusDirective } from './directives';
 import { ConcatPipe, ForObjectPipe, JoinPipe, LastElementPipe, SplitPipe, ToFixedPipe } from './pipes';
-import { ChargesBarComponent, TurnoverStatsComponent } from './components';
+import { ChargesBarComponent, GoalBarComponent, MonthlyIncomeComponent, NbWorkDaysComponent } from './components';
 
 const COMPONENTS_PRIVATE = [
   // Add components you do not want to export
@@ -10,7 +10,9 @@ const COMPONENTS_PRIVATE = [
 
 const COMPONENTS_PUBLIC = [
   ChargesBarComponent,
-  TurnoverStatsComponent
+  GoalBarComponent,
+  MonthlyIncomeComponent,
+  NbWorkDaysComponent
 ];
 
 const DIRECTIVES = [

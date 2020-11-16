@@ -1,17 +1,19 @@
 import { isPlatformBrowser } from '@angular/common';
-import { EventEmitter, Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Subject } from 'rxjs';
 import { DEFAULT_STATE } from '../core.constants';
 
 export interface State {
   dailyRate: number;
   socialChargesRate: number;
+  turnoverGoal: number;
   turnoverRealized: number;
 }
 
 @Injectable()
 export class StateService {
 
-  stateChanges$ = new EventEmitter<{
+  stateChanges$ = new Subject<{
     key: keyof State,
     value: any
   }>();

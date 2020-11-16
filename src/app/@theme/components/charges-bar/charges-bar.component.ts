@@ -27,9 +27,9 @@ export class ChargesBarComponent implements OnChanges, OnInit, OnDestroy {
 
   @Input() disabled: boolean;
 
-  @Input() total: number;
+  @Input() total?: number;
 
-  class = ['bg-primary text-light', 'bg-secondary text-primary', 'bg-gray text-dark'];
+  class = ['bg-primary text-light', 'bg-secondary text-primary', 'bg-dark text-white'];
 
   items: BarItem[] = [];
 

@@ -1,0 +1,13 @@
+<p class="mb-0">
+  <strong>
+    <ng-container *ngIf="remainingTimeOnly; else defaultLabel">
+      Jours de travail restants :
+    </ng-container>
+    <ng-template #defaultLabel>
+      Jours de travail effectués :
+    </ng-template>
+  </strong>
+  {{ nbWorkDays === undefined ? '-' : nbWorkDays }}<span class="text-secondary"> <> </span>
+  {{ nbWorkDaysPerMonth === undefined ? '-' : nbWorkDaysPerMonth }}<span class="text-small"> / mois</span><span class="text-secondary"> <> </span>
+  {{ nbWorkDaysPerWeek === undefined ? '-' : nbWorkDaysPerWeek }}<span class="text-small"> / semaine</span>
+</p>
