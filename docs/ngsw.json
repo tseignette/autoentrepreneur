@@ -1,0 +1,64 @@
+{
+  "configVersion": 1,
+  "timestamp": 1606209629667,
+  "index": "/autoentrepreneur/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/autoentrepreneur/4.67d6bdb5ca78ca3cd1f1.js",
+        "/autoentrepreneur/index.html",
+        "/autoentrepreneur/main.476dc86942966cf06f3a.js",
+        "/autoentrepreneur/manifest.webmanifest",
+        "/autoentrepreneur/polyfills.9bf4dad123bd95dda86e.js",
+        "/autoentrepreneur/runtime.618970d86adfbac5fd33.js",
+        "/autoentrepreneur/styles.85ff10ce1acaee67a9eb.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/autoentrepreneur/4.67d6bdb5ca78ca3cd1f1.js": "35d46830417d638e6133825a33aafa3e0adb6680",
+    "/autoentrepreneur/index.html": "4dfb0e861f91eb76c41cb8ce7804878c27c049b1",
+    "/autoentrepreneur/main.476dc86942966cf06f3a.js": "38c2aad2e9e06f52f1bfdb1dbfdc24707673f4eb",
+    "/autoentrepreneur/manifest.webmanifest": "6cf40b8af959111ada008a2eae705c96a527bfe8",
+    "/autoentrepreneur/polyfills.9bf4dad123bd95dda86e.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
+    "/autoentrepreneur/runtime.618970d86adfbac5fd33.js": "72c82e96f33eeb5b68d122a8fa5cb455fd19f5cd",
+    "/autoentrepreneur/styles.85ff10ce1acaee67a9eb.css": "da7a6e3c6bbfa2b60ddebcce39c89881a1b9272d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
