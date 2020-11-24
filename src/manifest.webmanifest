@@ -1,0 +1,9 @@
+{
+  "name": "Auto-entrepreneur",
+  "short_name": "Auto-entrepreneur",
+  "theme_color": "#5755d9",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./"
+}

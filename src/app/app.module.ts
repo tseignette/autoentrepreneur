@@ -6,6 +6,8 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localeFr);
 
@@ -20,7 +22,8 @@ registerLocaleData(localeFr);
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule.forRoot(),
-    ThemeModule.forRoot()
+    ThemeModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

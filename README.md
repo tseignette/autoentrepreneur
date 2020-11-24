@@ -12,4 +12,4 @@ Application de calcul des frais de l'auto-entrepreneur (et bien plus encore).
 TODO:
 
 ## Liste des tâches
-- mise en place de la PWA
+*Rien à faire*
