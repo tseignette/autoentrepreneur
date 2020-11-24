@@ -18,7 +18,8 @@ export class GoalBarComponent implements OnChanges {
   ngOnChanges(): void {
     if (
       this.turnoverGoal === null || this.turnoverGoal === undefined ||
-      this.turnoverRealized === null || this.turnoverRealized === undefined
+      this.turnoverRealized === null || this.turnoverRealized === undefined ||
+      this.turnoverGoal === 0
     ) {
       delete this.percentage;
     }
