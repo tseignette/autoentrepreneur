@@ -3,16 +3,16 @@ import { StateService } from './state.service';
 
 const incomeTaxAllowance = 0.34;
 /**
- * From 0 € to 10 064 €, tax is 0%
- * From 10 064 € to 25 659 €, tax is 30%
+ * From 0 € to 10 777 €, tax is 0%
+ * From 10 778 € to 27 478 €, tax is 30%
  * ...
  */
 const incomeTaxGroups = [
   [0, 0],
-  [10064, 0.11],
-  [25659, 0.3],
-  [73369, 0.41],
-  [157806, 0.45],
+  [10778, 0.11],
+  [27479, 0.3],
+  [78571, 0.41],
+  [168994, 0.45],
   [Infinity]
 ];
 
